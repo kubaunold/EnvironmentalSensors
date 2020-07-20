@@ -65,8 +65,9 @@ def update(id):
 @app.route('/receiveMeasurement', methods=['POST'])
 def result():
     # print(request.form['foo']) # should display 'bar'
-    measurment_temp = request.form['temperature']
-    measurment_hum = request.form['humidity']
+    measurement_temp = request.form['temperature']
+    measurement_hum = request.form['humidity']
+    
     new_measurment = Measurment(temperature = measurment_temp, humidity=measurment_hum)
     try:
         db.session.add(new_measurment)
