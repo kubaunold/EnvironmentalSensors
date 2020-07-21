@@ -3,6 +3,8 @@ import sys
 import numpy as np
 import json
 from datetime import date, time, datetime
+import requests
+
 
 # "constatnt" variables used for printing result 
 CELS = str("\u00b0C")  #sign for Celsius degrees
@@ -59,7 +61,7 @@ def obtainMeasurement():
 
     #pack to dict, then dump as json
     dataDict = {
-            "datetime": jsonDatetime, 
+            "timestamp": jsonDatetime, 
             "temperature": jsonTemperature,
             "humidity": jsonHumidity,
             "frameClass": jsonClass,
@@ -69,20 +71,13 @@ def obtainMeasurement():
             }
     return dataDict
 
-
-
-while 1:
-    measurementDict = obtainMeasurement()
-    measurementJson = json.dumps(measurementDict)
-    print(measurementJson)
-    print('')
-    print('')
-    # canDate2 = "2020-07-20"
-
-    # d = date.fromisoformat(canDate2)
-    # print("Datetime: " + str(d))
-    # print(type(d))
-    
-    #print("Hello:" + " ".join(format(x, "02x") for x in dataB) + '\n' + "type(dataB):" + str(type(dataB)))
-    
-    
+if __name__ == "__main__":
+    myApp = "http://127.0.0.1:5000/receiveMeasurement"
+    while(1):
+        measurementDict = obtainMeasurement()
+        measurementJson = json.dumps(measurementDict)
+        print(measurementJson)
+        print('')
+        print('')
+        #it has to be python-dict as a payload!
+        r = requests.post(myApp, data=measurementDict)
