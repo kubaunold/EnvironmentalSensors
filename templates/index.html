@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>ETD Environmental Sensor(s)</title>
+{% endblock %}
+
+{% block body %}
+<!-- <h1>Hi there! Soon There will be some Sensor Data...</h1> -->
+
+<div class="content">
+    <h1 style="text-align: center;">SensorMob</h1>
+    {% if measurments|length < 1 %}
+    <h4 style="text-align: center;">There are no measurments. Check app integrity.!</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Temperature [°C]</th>
+            <th>Humidity [%]</th>
+            <th>Time</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            {% for measurment in measurments %}
+            <tr>
+                <td>{{ measurment.temperature }}</td>
+                <td>{{ measurment.humidity }}</td>
+                <td>{{ measurment.time }}</td>
+                <td>
+                    <a href="/delete/{{ measurment.id }}">Delete</a>
+                    <br>
+                    <a href="/update/{{ measurment.id }}">Update</a>
+                </td> 
+            </tr>
+            {% endfor %} 
+        </tr>
+    </table>
+    {% endif %}
+
+    <form action="/" method="POST">
+        <table>
+            <td>
+                <label>Temperature:</label>
+                <label>Humidity:</label>
+            </td>
+            <td>
+                <input type="number" name="temp">
+                <input type="number" name="hum">
+            </td>
+        </table>
+        <input type="submit" value="Add measurment">
+    </form>
+</div>
+
+
+
+
+
+
+{% endblock %}
