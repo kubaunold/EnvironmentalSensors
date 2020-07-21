@@ -93,6 +93,8 @@ HOW TO RESET DB?
 voila!
 """
 """ INSTALL FLASK AND SQLALCHEMY
-sudo pip install flask
-sudo pip install sqlalchemy
+pip install flask  //bez sudo! inaczej zainstaluje dla roota te package, nie dla mojego uzytkownika `pi`
+pip install flask-sqlalchemy
+pip install numpy
+
 """
