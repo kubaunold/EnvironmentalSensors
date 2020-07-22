@@ -7,7 +7,7 @@ sudo ip link set can0 up type can bitrate 460800
 rm -rf *.log
 
 #prepare db and dbMS
-rm test.db
+#rm test.db
 python setupdb.py
 python databaseMS.py &
 

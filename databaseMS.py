@@ -7,13 +7,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 class Measurement(db.Model):
+    #id as PK is automatically set has autoincrement=True
     id =            db.Column(db.Integer, primary_key=True, nullable=False)
     temperature =   db.Column(db.Float, nullable=False, default=20)
     humidity =      db.Column(db.Float, nullable=False, default=20)
     timestamp =     db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Measurment %r>' % self.id
+        return '<Measurement: id=%r t=%f>' % (self.id, self.temperature)
+db.drop_all()
+db.create_all()
+mes1 = mes2 = Measurement(id='46', temperature='123.4', humidity='73.6')
+db.session.add(mes1)
+db.session.commit()
 
 @app.route('/receiveMeasurement', methods=['POST'])
 def result():
@@ -31,7 +37,7 @@ def result():
             return 'There was an issue adding a measurment.'
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=42000)
 
 
 """ HOW TO RESET DB?

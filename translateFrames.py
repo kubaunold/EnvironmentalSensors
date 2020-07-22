@@ -72,7 +72,7 @@ def obtainMeasurement():
     return dataDict
 
 if __name__ == "__main__":
-    myApp = "http://127.0.0.1:5000/receiveMeasurement"
+    myApp = "http://127.0.0.1:42000/receiveMeasurement"
     while(1):
         measurementDict = obtainMeasurement()
         measurementJson = json.dumps(measurementDict)
