@@ -21,7 +21,7 @@ def result():
         temp = request.form['temperature']
         hum = request.form['humidity']
         timestamp = request.form['timestamp']
-
+        
         new_measurement = Measurement(temperature=temp, humidity=hum, timestamp=timestamp)
         try:
             db.session.add(new_measurment)

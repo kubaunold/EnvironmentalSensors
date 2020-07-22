@@ -25,31 +25,11 @@
                 <td>{{ measurement.id }}</td>
                 <td>{{ measurement.temperature }}</td>
                 <td>{{ measurement.humidity }}</td>
-                <td>{{ measurment.timestamp }}</td>
+                <td>{{ measurement.timestamp }}</td>
             </tr>
             {% endfor %} 
         </tr>
     </table>
     {% endif %}
-
-    <form action="/" method="POST">
-        <table>
-            <td>
-                <label>Temperature:</label>
-                <label>Humidity:</label>
-            </td>
-            <td>
-                <input type="number" name="temp">
-                <input type="number" name="hum">
-            </td>
-        </table>
-        <input type="submit" value="Add measurment">
-    </form>
 </div>
-
-
-
-
-
-
 {% endblock %}
