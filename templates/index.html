@@ -9,27 +9,23 @@
 
 <div class="content">
     <h1 style="text-align: center;">SensorMob</h1>
-    {% if measurments|length < 1 %}
-    <h4 style="text-align: center;">There are no measurments. Check app integrity.!</h4>
+    {% if measurements|length < 1 %}
+    <h4 style="text-align: center;">There are no measurements. Check app integrity!</h4>
     {% else %}
     <table>
         <tr>
+            <th>id</th>
             <th>Temperature [°C]</th>
             <th>Humidity [%]</th>
-            <th>Time</th>
-            <th>Actions</th>
+            <th>Time and Date</th>
         </tr>
         <tr>
-            {% for measurment in measurments %}
+            {% for measurement in measurements %}
             <tr>
-                <td>{{ measurment.temperature }}</td>
-                <td>{{ measurment.humidity }}</td>
-                <td>{{ measurment.time }}</td>
-                <td>
-                    <a href="/delete/{{ measurment.id }}">Delete</a>
-                    <br>
-                    <a href="/update/{{ measurment.id }}">Update</a>
-                </td> 
+                <td>{{ measurement.id }}</td>
+                <td>{{ measurement.temperature }}</td>
+                <td>{{ measurement.humidity }}</td>
+                <td>{{ measurment.timestamp }}</td>
             </tr>
             {% endfor %} 
         </tr>
