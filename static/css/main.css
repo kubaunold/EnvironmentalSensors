@@ -1,0 +1,47 @@
+
+h1{
+    text-align: center;
+    /* text-decoration: ; */
+    text-transform: uppercase;
+    text-shadow: 3px 2px black;
+}
+
+body, html {
+    margin: 20;
+    font-family: sans-serif;
+    /* background-image: url("../blue-scratched-texture.jpg"); */
+    background-image: url("../red_and_yellow_bg.jpg");
+    /* background: gray; */
+    color: honeydew;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid rgb(245, 235, 247);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
