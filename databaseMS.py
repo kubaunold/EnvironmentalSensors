@@ -1,10 +1,22 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import logging
 
+#create logger
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+logger = logging.getLogger()
+
+#configure server and db
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+dbFileName = "test" #w/ an extension
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + dbFileName + ".db"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
+
+def checkDb(db):
+    db.create_all()
 
 class Measurement(db.Model):
     #id as PK is automatically set has autoincrement=True
@@ -15,11 +27,12 @@ class Measurement(db.Model):
 
     def __repr__(self):
         return '<Measurement: id=%r t=%f>' % (self.id, self.temperature)
-db.drop_all()
-db.create_all()
-mes1 = mes2 = Measurement(id='46', temperature='123.4', humidity='73.6')
-db.session.add(mes1)
-db.session.commit()
+# db.drop_all()
+# db.create_all()
+# mes1 = mes2 = Measurement(id='46', temperature='123.4', humidity='73.6')
+# db.session.add(mes1)
+# db.session.commit()
+
 
 @app.route('/receiveMeasurement', methods=['POST'])
 def result():
@@ -27,17 +40,21 @@ def result():
         temp = request.form['temperature']
         hum = request.form['humidity']
         timestamp = request.form['timestamp']
-        
+        # return "Temp: {temp}".format(temp=temp)        
         new_measurement = Measurement(temperature=temp, humidity=hum, timestamp=timestamp)
         try:
             db.session.add(new_measurment)
             db.session.commit()
-            return 'Measurement added successfully!'
         except:
+            logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
+        else:
+            logger.info("Measurement successfully inserted to the db.")
+
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=42000)
+    checkDb(db)
+    app.run(debug=True, host='127.0.0.100', port=42000)
 
 
 """ HOW TO RESET DB?

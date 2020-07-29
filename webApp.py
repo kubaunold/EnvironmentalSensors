@@ -4,6 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 class Measurement(db.Model):
@@ -25,9 +26,9 @@ class Measurement(db.Model):
 
 @app.route('/', methods=['GET'])
 def index():
-    measurements = Measurement.query.order_by(Measurement.timestamp).all()
-    measurments = Measurement.query.all()
+    # measurements = Measurement.query.order_by(Measurement.timestamp).all()
+    measurements = Measurement.query.all()
     return render_template('index.html', measurements=measurements)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=43000)
+    app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119

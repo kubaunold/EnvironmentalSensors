@@ -4,6 +4,14 @@ import numpy as np
 import json
 from datetime import date, time, datetime
 import requests
+import logging
+from sys import stdout  #for dynamic printing in console
+from time import sleep  #for dynamic printing in console
+
+#create logger
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = "log/translateFrames.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+logger = logging.getLogger()
 
 
 # "constatnt" variables used for printing result 
@@ -72,12 +80,32 @@ def obtainMeasurement():
     return dataDict
 
 if __name__ == "__main__":
-    myApp = "http://127.0.0.1:42000/receiveMeasurement"
+    databaseMS = "http://127.0.0.100:42000/receiveMeasurement"
     while(1):
         measurementDict = obtainMeasurement()
-        measurementJson = json.dumps(measurementDict)
-        print(measurementJson)
-        print('')
-        print('')
+        # measurementJson = json.dumps(measurementDict)
+
+        
+        # send packet
         #it has to be python-dict as a payload!
-        r = requests.post(myApp, data=measurementDict)
+        # r = requests.post(databaseMS, data=measurementDict)
+        try:
+            r = requests.post(databaseMS, data=measurementDict)
+            logger.info("Frame successfully sent to dataBaseMS")
+        except ConnectionRefusedError as err:
+            logger.error("ConnectionRefusedError; Reestablishing...")
+            print("Trying to restablish connection in ")
+            for i in range(3,0,-1):
+                stdout.write("\r%d... " % i)
+                stdout.flush()
+                sleep(1)
+            stdout.write("\n") # move the cursor to the next lin
+        except:
+            logger.error("Other error occured; Reestablishing...")
+            print("Unable to post request to databaseMS.py.")
+            print("Trying to restablish connection. Wait till timeout is completed...")
+            for i in range(101):
+                sleep(.03)
+                sys.stdout.write("\r%d%%" % i)
+                sys.stdout.flush()
+            stdout.write("\n") # move the cursor to the next lin

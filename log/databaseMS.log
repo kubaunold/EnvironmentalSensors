@@ -1,0 +1,356 @@
+WARNING 2020-07-27 15:49:40,850 -  * Debugger is active!
+INFO 2020-07-27 15:49:40,851 -  * Debugger PIN: 125-321-144
+ERROR 2020-07-27 15:49:40,868 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:40,869 - 127.0.0.1 - - [27/Jul/2020 15:49:40] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:41,381 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:41,381 - 127.0.0.1 - - [27/Jul/2020 15:49:41] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:42,389 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:42,391 - 127.0.0.1 - - [27/Jul/2020 15:49:42] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:43,391 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:43,392 - 127.0.0.1 - - [27/Jul/2020 15:49:43] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:44,391 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:44,392 - 127.0.0.1 - - [27/Jul/2020 15:49:44] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:45,742 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:45,743 - 127.0.0.1 - - [27/Jul/2020 15:49:45] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:46,394 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:46,395 - 127.0.0.1 - - [27/Jul/2020 15:49:46] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:47,395 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:47,396 - 127.0.0.1 - - [27/Jul/2020 15:49:47] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:48,395 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:48,397 - 127.0.0.1 - - [27/Jul/2020 15:49:48] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:49,396 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:49,398 - 127.0.0.1 - - [27/Jul/2020 15:49:49] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:50,405 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:50,406 - 127.0.0.1 - - [27/Jul/2020 15:49:50] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:51,391 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:51,392 - 127.0.0.1 - - [27/Jul/2020 15:49:51] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:52,391 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:52,393 - 127.0.0.1 - - [27/Jul/2020 15:49:52] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:53,402 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:53,404 - 127.0.0.1 - - [27/Jul/2020 15:49:53] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:54,403 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:54,404 - 127.0.0.1 - - [27/Jul/2020 15:49:54] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:55,405 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:55,407 - 127.0.0.1 - - [27/Jul/2020 15:49:55] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:56,409 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:56,410 - 127.0.0.1 - - [27/Jul/2020 15:49:56] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:57,403 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:57,404 - 127.0.0.1 - - [27/Jul/2020 15:49:57] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:58,404 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:58,405 - 127.0.0.1 - - [27/Jul/2020 15:49:58] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:49:59,405 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:49:59,406 - 127.0.0.1 - - [27/Jul/2020 15:49:59] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:00,406 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:00,407 - 127.0.0.1 - - [27/Jul/2020 15:50:00] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:01,408 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:01,409 - 127.0.0.1 - - [27/Jul/2020 15:50:01] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:02,407 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:02,408 - 127.0.0.1 - - [27/Jul/2020 15:50:02] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:03,410 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:03,412 - 127.0.0.1 - - [27/Jul/2020 15:50:03] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:04,409 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:04,410 - 127.0.0.1 - - [27/Jul/2020 15:50:04] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:05,410 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:05,412 - 127.0.0.1 - - [27/Jul/2020 15:50:05] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:06,417 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:06,418 - 127.0.0.1 - - [27/Jul/2020 15:50:06] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:07,414 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:07,415 - 127.0.0.1 - - [27/Jul/2020 15:50:07] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:08,414 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:08,415 - 127.0.0.1 - - [27/Jul/2020 15:50:08] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:09,417 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:09,419 - 127.0.0.1 - - [27/Jul/2020 15:50:09] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:10,418 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:10,419 - 127.0.0.1 - - [27/Jul/2020 15:50:10] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:13,292 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:13,294 - 127.0.0.1 - - [27/Jul/2020 15:50:13] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:13,313 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:13,315 - 127.0.0.1 - - [27/Jul/2020 15:50:13] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:13,419 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:13,420 - 127.0.0.1 - - [27/Jul/2020 15:50:13] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:14,422 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:14,424 - 127.0.0.1 - - [27/Jul/2020 15:50:14] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:15,423 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:15,425 - 127.0.0.1 - - [27/Jul/2020 15:50:15] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:16,426 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:16,427 - 127.0.0.1 - - [27/Jul/2020 15:50:16] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:17,425 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:17,426 - 127.0.0.1 - - [27/Jul/2020 15:50:17] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:18,426 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:18,427 - 127.0.0.1 - - [27/Jul/2020 15:50:18] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:19,428 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:19,430 - 127.0.0.1 - - [27/Jul/2020 15:50:19] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:20,428 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:20,430 - 127.0.0.1 - - [27/Jul/2020 15:50:20] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:21,432 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:21,433 - 127.0.0.1 - - [27/Jul/2020 15:50:21] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:22,430 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:22,432 - 127.0.0.1 - - [27/Jul/2020 15:50:22] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:23,431 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:23,432 - 127.0.0.1 - - [27/Jul/2020 15:50:23] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:24,432 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:24,434 - 127.0.0.1 - - [27/Jul/2020 15:50:24] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:25,433 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:25,435 - 127.0.0.1 - - [27/Jul/2020 15:50:25] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:26,440 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:26,442 - 127.0.0.1 - - [27/Jul/2020 15:50:26] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:27,435 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:27,437 - 127.0.0.1 - - [27/Jul/2020 15:50:27] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:28,436 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:28,437 - 127.0.0.1 - - [27/Jul/2020 15:50:28] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:29,438 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:29,440 - 127.0.0.1 - - [27/Jul/2020 15:50:29] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:30,432 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:30,433 - 127.0.0.1 - - [27/Jul/2020 15:50:30] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:31,432 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:31,433 - 127.0.0.1 - - [27/Jul/2020 15:50:31] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:32,441 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:32,443 - 127.0.0.1 - - [27/Jul/2020 15:50:32] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:33,442 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:33,444 - 127.0.0.1 - - [27/Jul/2020 15:50:33] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:34,446 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:34,448 - 127.0.0.1 - - [27/Jul/2020 15:50:34] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:35,444 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:35,445 - 127.0.0.1 - - [27/Jul/2020 15:50:35] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:36,437 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:36,438 - 127.0.0.1 - - [27/Jul/2020 15:50:36] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:37,447 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:37,449 - 127.0.0.1 - - [27/Jul/2020 15:50:37] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:38,440 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:38,441 - 127.0.0.1 - - [27/Jul/2020 15:50:38] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:39,448 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:39,448 - 127.0.0.1 - - [27/Jul/2020 15:50:39] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:40,447 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:40,450 - 127.0.0.1 - - [27/Jul/2020 15:50:40] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:41,450 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:41,451 - 127.0.0.1 - - [27/Jul/2020 15:50:41] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:42,449 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:42,450 - 127.0.0.1 - - [27/Jul/2020 15:50:42] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:43,449 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:43,450 - 127.0.0.1 - - [27/Jul/2020 15:50:43] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:44,456 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:44,457 - 127.0.0.1 - - [27/Jul/2020 15:50:44] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:45,453 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:45,454 - 127.0.0.1 - - [27/Jul/2020 15:50:45] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:46,464 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:46,466 - 127.0.0.1 - - [27/Jul/2020 15:50:46] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:47,456 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:47,457 - 127.0.0.1 - - [27/Jul/2020 15:50:47] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:48,457 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:48,458 - 127.0.0.1 - - [27/Jul/2020 15:50:48] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:49,790 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:49,792 - 127.0.0.1 - - [27/Jul/2020 15:50:49] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:50,458 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:50,460 - 127.0.0.1 - - [27/Jul/2020 15:50:50] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:51,457 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:51,458 - 127.0.0.1 - - [27/Jul/2020 15:50:51] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:52,455 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:52,456 - 127.0.0.1 - - [27/Jul/2020 15:50:52] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:53,462 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:53,464 - 127.0.0.1 - - [27/Jul/2020 15:50:53] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:54,805 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:54,807 - 127.0.0.1 - - [27/Jul/2020 15:50:54] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:55,466 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:55,468 - 127.0.0.1 - - [27/Jul/2020 15:50:55] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:56,465 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:56,467 - 127.0.0.1 - - [27/Jul/2020 15:50:56] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:57,466 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:57,467 - 127.0.0.1 - - [27/Jul/2020 15:50:57] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:58,467 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:58,469 - 127.0.0.1 - - [27/Jul/2020 15:50:58] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:50:59,461 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:50:59,462 - 127.0.0.1 - - [27/Jul/2020 15:50:59] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:00,469 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:00,471 - 127.0.0.1 - - [27/Jul/2020 15:51:00] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:01,471 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:01,473 - 127.0.0.1 - - [27/Jul/2020 15:51:01] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:02,473 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:02,474 - 127.0.0.1 - - [27/Jul/2020 15:51:02] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:03,472 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:03,474 - 127.0.0.1 - - [27/Jul/2020 15:51:03] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:04,473 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:04,476 - 127.0.0.1 - - [27/Jul/2020 15:51:04] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:05,474 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:05,476 - 127.0.0.1 - - [27/Jul/2020 15:51:05] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:06,475 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:06,476 - 127.0.0.1 - - [27/Jul/2020 15:51:06] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:07,476 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:07,478 - 127.0.0.1 - - [27/Jul/2020 15:51:07] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:08,477 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:08,479 - 127.0.0.1 - - [27/Jul/2020 15:51:08] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:09,479 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:09,480 - 127.0.0.1 - - [27/Jul/2020 15:51:09] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:10,477 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:10,478 - 127.0.0.1 - - [27/Jul/2020 15:51:10] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:11,480 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:11,482 - 127.0.0.1 - - [27/Jul/2020 15:51:11] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:12,481 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:12,483 - 127.0.0.1 - - [27/Jul/2020 15:51:12] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:13,482 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:13,484 - 127.0.0.1 - - [27/Jul/2020 15:51:13] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:14,484 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:14,485 - 127.0.0.1 - - [27/Jul/2020 15:51:14] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:15,484 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:15,486 - 127.0.0.1 - - [27/Jul/2020 15:51:15] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:16,486 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:16,487 - 127.0.0.1 - - [27/Jul/2020 15:51:16] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:17,487 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:17,489 - 127.0.0.1 - - [27/Jul/2020 15:51:17] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:18,486 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:18,487 - 127.0.0.1 - - [27/Jul/2020 15:51:18] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:19,487 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:19,814 - 127.0.0.1 - - [27/Jul/2020 15:51:19] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:20,490 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:20,491 - 127.0.0.1 - - [27/Jul/2020 15:51:20] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:21,489 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:21,490 - 127.0.0.1 - - [27/Jul/2020 15:51:21] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:22,492 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:22,494 - 127.0.0.1 - - [27/Jul/2020 15:51:22] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:23,494 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:23,496 - 127.0.0.1 - - [27/Jul/2020 15:51:23] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:24,496 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:24,821 - 127.0.0.1 - - [27/Jul/2020 15:51:24] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:25,495 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:25,496 - 127.0.0.1 - - [27/Jul/2020 15:51:25] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:26,496 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:26,497 - 127.0.0.1 - - [27/Jul/2020 15:51:26] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:27,497 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:27,498 - 127.0.0.1 - - [27/Jul/2020 15:51:27] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:28,498 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:28,500 - 127.0.0.1 - - [27/Jul/2020 15:51:28] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:29,499 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:30,259 - 127.0.0.1 - - [27/Jul/2020 15:51:30] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:30,500 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:30,502 - 127.0.0.1 - - [27/Jul/2020 15:51:30] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:31,501 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:31,503 - 127.0.0.1 - - [27/Jul/2020 15:51:31] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:32,496 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:32,496 - 127.0.0.1 - - [27/Jul/2020 15:51:32] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:33,496 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:33,497 - 127.0.0.1 - - [27/Jul/2020 15:51:33] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:34,504 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:34,506 - 127.0.0.1 - - [27/Jul/2020 15:51:34] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:35,505 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:35,507 - 127.0.0.1 - - [27/Jul/2020 15:51:35] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:36,500 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:36,501 - 127.0.0.1 - - [27/Jul/2020 15:51:36] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:37,500 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:37,500 - 127.0.0.1 - - [27/Jul/2020 15:51:37] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:38,508 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:38,510 - 127.0.0.1 - - [27/Jul/2020 15:51:38] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:39,509 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:39,511 - 127.0.0.1 - - [27/Jul/2020 15:51:39] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:40,503 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:40,503 - 127.0.0.1 - - [27/Jul/2020 15:51:40] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:41,513 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:41,514 - 127.0.0.1 - - [27/Jul/2020 15:51:41] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:42,506 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:42,507 - 127.0.0.1 - - [27/Jul/2020 15:51:42] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:43,507 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:43,508 - 127.0.0.1 - - [27/Jul/2020 15:51:43] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:44,515 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:44,517 - 127.0.0.1 - - [27/Jul/2020 15:51:44] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:45,516 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:45,518 - 127.0.0.1 - - [27/Jul/2020 15:51:45] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:46,519 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:46,850 - 127.0.0.1 - - [27/Jul/2020 15:51:46] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:47,518 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:47,519 - 127.0.0.1 - - [27/Jul/2020 15:51:47] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:48,519 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:48,521 - 127.0.0.1 - - [27/Jul/2020 15:51:48] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:49,520 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:49,521 - 127.0.0.1 - - [27/Jul/2020 15:51:49] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:50,521 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:50,523 - 127.0.0.1 - - [27/Jul/2020 15:51:50] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:51,522 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:51,524 - 127.0.0.1 - - [27/Jul/2020 15:51:51] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:52,523 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:52,525 - 127.0.0.1 - - [27/Jul/2020 15:51:52] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:53,517 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:53,517 - 127.0.0.1 - - [27/Jul/2020 15:51:53] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:54,525 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:54,526 - 127.0.0.1 - - [27/Jul/2020 15:51:54] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:55,526 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:55,527 - 127.0.0.1 - - [27/Jul/2020 15:51:55] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:56,527 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:56,842 - 127.0.0.1 - - [27/Jul/2020 15:51:56] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:57,528 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:57,529 - 127.0.0.1 - - [27/Jul/2020 15:51:57] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:58,527 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:58,529 - 127.0.0.1 - - [27/Jul/2020 15:51:58] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:51:59,527 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:51:59,529 - 127.0.0.1 - - [27/Jul/2020 15:51:59] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:00,528 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:00,530 - 127.0.0.1 - - [27/Jul/2020 15:52:00] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:01,529 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:01,531 - 127.0.0.1 - - [27/Jul/2020 15:52:01] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:02,530 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:02,532 - 127.0.0.1 - - [27/Jul/2020 15:52:02] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:03,534 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:03,535 - 127.0.0.1 - - [27/Jul/2020 15:52:03] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:04,535 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:04,537 - 127.0.0.1 - - [27/Jul/2020 15:52:04] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:05,537 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:05,539 - 127.0.0.1 - - [27/Jul/2020 15:52:05] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:06,538 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:06,539 - 127.0.0.1 - - [27/Jul/2020 15:52:06] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:07,539 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:07,540 - 127.0.0.1 - - [27/Jul/2020 15:52:07] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:08,544 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:08,545 - 127.0.0.1 - - [27/Jul/2020 15:52:08] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:09,541 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:09,542 - 127.0.0.1 - - [27/Jul/2020 15:52:09] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:10,542 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:10,543 - 127.0.0.1 - - [27/Jul/2020 15:52:10] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:11,540 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:11,887 - 127.0.0.1 - - [27/Jul/2020 15:52:11] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:12,544 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:12,545 - 127.0.0.1 - - [27/Jul/2020 15:52:12] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:13,542 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:13,544 - 127.0.0.1 - - [27/Jul/2020 15:52:13] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:14,543 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:14,545 - 127.0.0.1 - - [27/Jul/2020 15:52:14] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:15,545 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:15,546 - 127.0.0.1 - - [27/Jul/2020 15:52:15] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:16,540 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:16,541 - 127.0.0.1 - - [27/Jul/2020 15:52:16] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:17,551 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:17,552 - 127.0.0.1 - - [27/Jul/2020 15:52:17] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:18,551 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:18,553 - 127.0.0.1 - - [27/Jul/2020 15:52:18] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:19,543 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:19,544 - 127.0.0.1 - - [27/Jul/2020 15:52:19] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:20,545 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:20,550 - 127.0.0.1 - - [27/Jul/2020 15:52:20] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:21,545 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:21,546 - 127.0.0.1 - - [27/Jul/2020 15:52:21] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:22,554 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:22,555 - 127.0.0.1 - - [27/Jul/2020 15:52:22] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:23,550 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:23,551 - 127.0.0.1 - - [27/Jul/2020 15:52:23] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:24,553 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:24,555 - 127.0.0.1 - - [27/Jul/2020 15:52:24] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:25,554 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:25,556 - 127.0.0.1 - - [27/Jul/2020 15:52:25] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:26,555 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:26,557 - 127.0.0.1 - - [27/Jul/2020 15:52:26] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:27,559 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:27,560 - 127.0.0.1 - - [27/Jul/2020 15:52:27] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:28,564 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:28,566 - 127.0.0.1 - - [27/Jul/2020 15:52:28] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:29,562 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:29,582 - 127.0.0.1 - - [27/Jul/2020 15:52:29] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:30,604 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:30,606 - 127.0.0.1 - - [27/Jul/2020 15:52:30] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:31,564 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:31,566 - 127.0.0.1 - - [27/Jul/2020 15:52:31] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:32,565 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:32,566 - 127.0.0.1 - - [27/Jul/2020 15:52:32] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:33,566 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:33,567 - 127.0.0.1 - - [27/Jul/2020 15:52:33] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:34,567 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:34,568 - 127.0.0.1 - - [27/Jul/2020 15:52:34] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:35,568 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:35,569 - 127.0.0.1 - - [27/Jul/2020 15:52:35] "POST /receiveMeasurement HTTP/1.1" 200 -
+ERROR 2020-07-27 15:52:36,569 - Measurement failed to be inserted to the db.
+INFO 2020-07-27 15:52:36,570 - 127.0.0.1 - - [27/Jul/2020 15:52:36] "POST /receiveMeasurement HTTP/1.1" 200 -
