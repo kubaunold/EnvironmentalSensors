@@ -99,7 +99,7 @@ if __name__ == "__main__":
                 stdout.write("\r%d... " % i)
                 stdout.flush()
                 sleep(1)
-            stdout.write("\n") # move the cursor to the next lin
+            stdout.write("\n") # move the cursor to the next line
         except:
             logger.error("Other error occured; Reestablishing...")
             print("Unable to post request to databaseMS.py.")

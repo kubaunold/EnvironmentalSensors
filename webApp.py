@@ -14,7 +14,7 @@ class Measurement(db.Model):
     timestamp =     db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Measurement: id=%r t=%f>' % (self.id, self.temperature)
+        return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
 # class Measurment(db.Model):
 #     id =            db.Column(db.Integer, primary_key=True, nullable=False)
 #     temperature =   db.Column(db.Integer, nullable=False, default=20)
