@@ -13,7 +13,7 @@ logger = logging.getLogger()
 app = Flask(__name__)
 dbFileName = "test" #w/ an extension
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + dbFileName + ".db"
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 def checkDb(db):
@@ -30,35 +30,31 @@ class Measurement(db.Model):
         return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
 
 
+
 @app.route('/insertMeasurement', methods=['POST'])
 def result():
     if request.method == 'POST':
         temp = request.form['temperature']
-        print("Temperature = ", temp)
+        # print("Temperature = ", temp)
         hum = request.form['humidity']
-        print("Humidity = ", hum)
+        # print("Humidity = ", hum)
         mes = Measurement(temperature=temp, humidity=hum)
 
         timestampStr = request.form['timestamp']
         timeStampDateTimeObj = datetime.strptime(timestampStr, '%Y-%m-%d %H:%M:%S.%f')
-        # timeStampDateTimeObj = datetime.strptime(timestampStr)
-        print("Timestamp = ", timeStampDateTimeObj, "tsFormat: ", type(timeStampDateTimeObj))
+        # print("Timestamp = ", timeStampDateTimeObj, "tsFormat: ", type(timeStampDateTimeObj))
         mes = Measurement(temperature=temp, humidity=hum, timestamp=timeStampDateTimeObj)
 
         try:
             db.session.add(mes)
-            print("Added")
             db.session.commit()
-            print("Commited")
             logger.info("Frame successfully commited to the db")
-            print(1)
             # return 'Stomething.'
         except:
             logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
         else:
             logger.info("Measurement successfully inserted to the db.")
-            print(2)
             return 'Measurement successfully inserted to the db.'
 
 @app.route('/getAllMeasurements', methods=['GET'])

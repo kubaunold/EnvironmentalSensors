@@ -6,7 +6,7 @@ from datetime import date, time, datetime
 import requests
 import logging
 from sys import stdout  #for dynamic printing in console
-from time import sleep  #for dynamic printing in console
+from time import sleep
 
 #create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -79,7 +79,19 @@ def obtainMeasurement():
             }
     return dataDict
 
+# def countDown(n):
+#     for i in range(n,0,-1):
+#         stdout.write("\r%d... " % i)
+#         stdout.flush()
+#         sleep(1)
+#     stdout.write("\n") # move the cursor to the next line
+
+
+
 if __name__ == "__main__":
+    print("translateFrames: Waiting until the database is up...")
+    sleep(5)
+
     databaseMS = "http://127.0.0.100:42000/insertMeasurement"
     while(1):
         measurementDict = obtainMeasurement()
@@ -95,11 +107,8 @@ if __name__ == "__main__":
         except ConnectionRefusedError as err:
             logger.error("ConnectionRefusedError; Reestablishing...")
             print("Trying to restablish connection in ")
-            for i in range(3,0,-1):
-                stdout.write("\r%d... " % i)
-                stdout.flush()
-                sleep(1)
-            stdout.write("\n") # move the cursor to the next line
+            sleep(3)
+            # countDown(3)
         except:
             logger.error("Other error occured; Reestablishing...")
             print("Unable to post request to databaseMS.py.")
