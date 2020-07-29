@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import logging
+import time
 
 #create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -38,18 +39,29 @@ class Measurement(db.Model):
 def result():
     if request.method == 'POST':
         temp = request.form['temperature']
+        print("Temperature = ", temp)
         hum = request.form['humidity']
-        timestamp = request.form['timestamp']
+        print("Humidity = ", hum)
+        #timestamp = request.form['timestamp']
+        #print("Timestamp = ", timestamp)
+
         # return "Temp: {temp}".format(temp=temp)        
-        new_measurement = Measurement(temperature=temp, humidity=hum, timestamp=timestamp)
+        # mes = Measurement(temperature=temp, humidity=hum, timestamp=timestamp)
+        mes = Measurement(temperature=temp, humidity=hum)
+
         try:
-            db.session.add(new_measurment)
+            db.session.add(mes)
+            print("Added")
             db.session.commit()
+            time.sleep(2)
+            print("Commited")
+            return 'Stomething.'
         except:
             logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
         else:
             logger.info("Measurement successfully inserted to the db.")
+            return 'Measurement successfully inserted to the db.'
 
 
 if __name__ == "__main__":
