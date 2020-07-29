@@ -80,7 +80,7 @@ def obtainMeasurement():
     return dataDict
 
 if __name__ == "__main__":
-    databaseMS = "http://127.0.0.100:42000/receiveMeasurement"
+    databaseMS = "http://127.0.0.100:42000/insertMeasurement"
     while(1):
         measurementDict = obtainMeasurement()
         # measurementJson = json.dumps(measurementDict)

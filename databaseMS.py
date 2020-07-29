@@ -7,14 +7,13 @@ import time
 #create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
 logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
-# logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, filemode = 'w')
 logger = logging.getLogger()
 
 #configure server and db
 app = Flask(__name__)
 dbFileName = "test" #w/ an extension
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + dbFileName + ".db"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 def checkDb(db):
@@ -29,14 +28,9 @@ class Measurement(db.Model):
 
     def __repr__(self):
         return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
-# db.drop_all()
-# db.create_all()
-# mes1 = mes2 = Measurement(id='46', temperature='123.4', humidity='73.6')
-# db.session.add(mes1)
-# db.session.commit()
 
 
-@app.route('/receiveMeasurement', methods=['POST'])
+@app.route('/insertMeasurement', methods=['POST'])
 def result():
     if request.method == 'POST':
         temp = request.form['temperature']
@@ -66,6 +60,20 @@ def result():
             logger.info("Measurement successfully inserted to the db.")
             print(2)
             return 'Measurement successfully inserted to the db.'
+
+@app.route('/getAllMeasurements', methods=['GET'])
+def getAllMeasurements():
+    if request.method == 'GET':
+        # return "Zwracam pomiary..."
+        try:
+            measurements = Measurement.query.order_by(Measurement.timestamp).all()
+            measurements = Measurement.query.all()
+        except:
+            logger.error("Database is temporarily in a lockdown mode.")
+            return "Database is temporarily in a lockdown mode."
+        else:
+            logger.info("Successfully sent HTTP message to webApp.")
+        return render_template('index.html', measurements=measurements)
 
 
 if __name__ == "__main__":

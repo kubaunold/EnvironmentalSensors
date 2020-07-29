@@ -1,34 +1,25 @@
 from flask import Flask, render_template, url_for, request, redirect
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+import requests
+import logging
+
+#create logger
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+logger = logging.getLogger()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-db = SQLAlchemy(app)
-
-class Measurement(db.Model):
-    id =            db.Column(db.Integer, primary_key=True, nullable=False)
-    temperature =   db.Column(db.Float, nullable=False, default=20)
-    humidity =      db.Column(db.Float, nullable=False, default=20)
-    timestamp =     db.Column(db.DateTime, default=datetime.utcnow)
-
-    def __repr__(self):
-        return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
-# class Measurment(db.Model):
-#     id =            db.Column(db.Integer, primary_key=True, nullable=False)
-#     temperature =   db.Column(db.Integer, nullable=False, default=20)
-#     humidity =      db.Column(db.Integer, nullable=False, default=20)
-#     time =          db.Column(db.DateTime, default=datetime.utcnow)
-
-#     def __repr__(self):
-#         return '<Measurment %r>' % self.id
+databaseMS_URL = "http://127.0.0.100:42000/getAllMeasurements"
 
 @app.route('/', methods=['GET'])
 def index():
-    # measurements = Measurement.query.order_by(Measurement.timestamp).all()
-    measurements = Measurement.query.all()
-    return render_template('index.html', measurements=measurements)
+    try:
+        r = requests.get(url = databaseMS_URL)
+    except:
+        logger.error("Could not get HTTP response from databaseMS.")
+        return "Could not get HTTP response from databaseMS."
+    else:
+        logger.info("Successfully obtained HTTP response from databaseMS.")
+        return r.content
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119
