@@ -21,7 +21,7 @@ trap handler SIGINT
 #-x 	-	for extra info; RX-receiving; TX-transmitting
 python databaseMS.py & python webApp.py & candump can0 -t A | python3 /home/pi/EnvSen/translateFrames.py
 
-
+#screen
 
 
 

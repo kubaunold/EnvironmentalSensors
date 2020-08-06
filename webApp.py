@@ -4,7 +4,7 @@ import logging
 from time import sleep
 from sys import stdout  #for dynamic printing in console
 
-#create logger
+# create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
 logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
 logger = logging.getLogger()
@@ -34,4 +34,5 @@ def index():
 if __name__ == "__main__":
     print("webApp: Waiting until the database is up...")
     sleep(5)
+    print("Setting up server at: {}".format("http://127.0.0.1:5000/"))
     app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119
