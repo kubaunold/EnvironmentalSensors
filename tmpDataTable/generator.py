@@ -27,10 +27,14 @@ def hello_world():
     for i in range(10**2):
         newMeasurement = generate(i)
         d.append(newMeasurement)
-    print("Type of d: {}".format(type(d)))
-    print("Type of json.dumps(d): {}".format(type(json.dumps(d))))
-    return json.dumps(d)
-    # return myDict
+    # print("Type of d: {}".format(type(d)))
+    # print("Type of json.dumps(d): {}".format(type(json.dumps(d))))
+    result = json.dumps(d)
+    print("result: {}".format(result))
+    print("Type of result: {}".format(type(result)))
+
+    return result
+
 if __name__ == "__main__":
     #will run at http://127.0.0.1:5002/
     app.run(debug=True, host='0.0.0.0', port=5002)  
