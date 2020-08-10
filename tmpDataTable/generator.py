@@ -24,7 +24,7 @@ def generate(i):
 def hello_world():
     # meas1 = {'id': 1, 'temperature': 13.5, 'humidity': 43.8, 'timestamp': '2020-08-06 11:58:15.924420'}
     d = []
-    for i in range(10**2):
+    for i in range(10**3):
         newMeasurement = generate(i)
         d.append(newMeasurement)
     # print("Type of d: {}".format(type(d)))

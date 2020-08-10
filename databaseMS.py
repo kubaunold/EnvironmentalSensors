@@ -64,6 +64,7 @@ def getAllMeasurements():
         try:
             measurements = Measurement.query.order_by(Measurement.timestamp).all()
             measurements = Measurement.query.all()
+            print("type(measurements[1]): {}".format(type(measurements[1])))
         except:
             logger.error("Database is temporarily in a lockdown mode.")
             return "Database is temporarily in a lockdown mode."
