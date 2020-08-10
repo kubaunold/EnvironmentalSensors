@@ -258,7 +258,10 @@ html {
   } 
   
   #icon {
-    padding: 12pt;
-    width:20%;
+    /* padding: 12pt; */
+    /* width:20%; */
+    width: 40%;
+    height: auto;
+    /* float: center; */
   }
   

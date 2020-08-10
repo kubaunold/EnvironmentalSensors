@@ -1,23 +1,20 @@
 {% extends 'base.html' %}
 {% block head %}
-<title>ETD Environmental Sensor(s) - Login page</title>
+<title>EnvSen - Login page</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
 {% block body %}
-
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
-    <div class="fadeIn first">
-      <td>
-              <img alt="etd-icon"id="icon" src="data:image/png;filename=Logo_etd_beztla.png;base64,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" />
-      </td>
-      <td>
-          Elektronika i Telematyka Drogowa Sp. z o. o. </br> <strong>Environmental sensors</strong>
-      </td>
+    
+    <!-- Icon and Page Title-->
+    <div class="fadeIn first" style="font-size: x-large;">
+      <strong>Environmental sensors</strong>
+      </br>
+      <a href="http://etd.net.pl/" target="_blank">
+        <img alt="etd-icon" id="icon" width="200" height="200" src="/static/images/etd_logo_200x200.jpg"/>
+      </a>
     </div>
 
     <!-- Login Form -->
@@ -27,7 +24,7 @@
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
-    <!-- Remind Passowrd -->
+    <!-- Remind Password -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
