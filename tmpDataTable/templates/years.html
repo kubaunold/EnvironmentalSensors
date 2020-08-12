@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>EnvSen - Years page</title>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> -->
+{% endblock %}
+
+{% block body %}
+
+{% for i in range(2000,2020) %}
+  <a href="{{ url_for('show_all') }}">
+    <button type="button" class="btn btn-outline-primary">
+      {{i}}
+      <br/>
+    </button>
+  </a>
+{% endfor %}
+
+<a href="{{ url_for('show_all') }}">
+  <button type="button" class="btn btn-outline-primary">
+    2020
+  </button>
+</a>
+
+
+{% endblock %}

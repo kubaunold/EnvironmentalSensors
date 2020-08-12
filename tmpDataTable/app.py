@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI' = 'sqlite:///login.db']
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///login.db'
 app.config['SECRET_KEY'] = 'thisissecret'
 
 db = SQLAlchemy(app)
@@ -42,8 +42,31 @@ def loginPage(name=None):
     except:
         return 'Could not load login page.'
 
+@app.route('/name')
+@app.route('/name/<namy>')
+def sayHello(namy="Alen"):
+    return f"Hello, {namy}"
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return "<h1>404</h1><p>The resource could not be found.</p>", 404
+
+@app.route('/years')
+def years():
+    years = [2019, 2020]
+    try:
+        return render_template('years.html', years=years)
+    except:
+        return 'Could not load "years" page.'
+
+@app.route('/backs')
+def show_all():
+   return render_template('index.html')
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)
+
+
 
 """
     #r: <Response [200]>
@@ -53,4 +76,10 @@ if __name__ == "__main__":
     # type(my_json): <class 'str'>
     my_json = r.content.decode('utf8')
     return my_json
+"""
+
+""" Create new database
+sqlite3 login.db
+sqlite>     .tables //checks for active tables (should return nothing if empty)
+sqlite>     .exit
 """

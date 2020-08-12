@@ -24,7 +24,7 @@ def generate(i):
 def hello_world():
     # meas1 = {'id': 1, 'temperature': 13.5, 'humidity': 43.8, 'timestamp': '2020-08-06 11:58:15.924420'}
     d = []
-    for i in range(10**3):
+    for i in range(3600):
         newMeasurement = generate(i)
         d.append(newMeasurement)
     # print("Type of d: {}".format(type(d)))
@@ -34,6 +34,10 @@ def hello_world():
     print("Type of result: {}".format(type(result)))
 
     return result
+
+@app.route('/franek')
+def show_all():
+    return "All"
 
 if __name__ == "__main__":
     #will run at http://127.0.0.1:5002/
