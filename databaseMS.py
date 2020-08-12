@@ -91,3 +91,11 @@ pip install flask  //bez sudo! inaczej zainstaluje dla roota te package, nie dla
 pip install flask-sqlalchemy
 pip install numpy
 """
+""" HOW TO LOOK INSIDE DB?
+1) source /venv/bin/activate    or      venv
+2) python
+3) from databaseMS import Measurement, db
+4) db.create_all()
+5) Measurement.query.all()
+6) exit()
+"""
