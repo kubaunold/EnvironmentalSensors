@@ -92,10 +92,10 @@ pip install flask-sqlalchemy
 pip install numpy
 """
 """ HOW TO LOOK INSIDE DB?
-1) source /venv/bin/activate    or      venv
-2) python
-3) from databaseMS import Measurement, db
-4) db.create_all()
-5) Measurement.query.all()
-6) exit()
+source /venv/bin/activate    #venv (alternatively)
+python
+from databaseMS import Measurement, db
+db.create_all()
+Measurement.query.all()
+exit()
 """
