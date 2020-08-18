@@ -72,6 +72,27 @@ def getAllMeasurements():
             logger.info("Successfully sent HTTP message to webApp.")
         return render_template('index.html', measurements=measurements)
 
+@app.route('/years')
+def years():
+    print(1233)
+    occuringYears = []
+    minYear = Measurement.query.order_by(Measurement.timestamp.asc()).first().timestamp.year
+    maxYear = Measurement.query.order_by(Measurement.timestamp.desc()).first().timestamp.year
+    print(minYear, maxYear)
+    for i in range(minYear, maxYear + 1):
+        currentYearResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
+        if currentYearResponse != None:
+            occuringYears+=[i]
+    print(f"occuringYears: {occuringYears}")
+    try:
+        return render_template('years.html', years=occuringYears)
+    except:
+        return 'Could not load "years" page. Bzzz'
+    # return 'Returning "years" page.'
+
+@app.route('/yoki')
+def yoki():
+    return render_template("years.html")
 
 if __name__ == "__main__":
     checkDb(db)
@@ -98,4 +119,10 @@ from databaseMS import Measurement, db
 db.create_all()
 Measurement.query.all()
 exit()
+"""
+""" More complex queries
+Measurement.query.filter_by(id=5862).all()
+Measurement.query.filter_by(id=5862).first()
+Measurement.query.filter_by(id=586215).first_or_404(description='There is no data with {}'.format(15))
+Measurement.query.order_by(Measurement.timestamp.desc()).first()
 """

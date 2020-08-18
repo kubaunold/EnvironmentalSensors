@@ -10,8 +10,9 @@ logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=L
 logger = logging.getLogger()
 
 app = Flask(__name__)
-databaseMS_URL = "http://127.0.0.100:42000/getAllMeasurements"
+databaseMS_URL = "http://127.0.0.100:42000"
 
+"""Prints countdown"""
 # def countDown(n):
 #     for i in range(n,0,-1):
 #         stdout.write("\r%d... " % i)
@@ -23,12 +24,32 @@ databaseMS_URL = "http://127.0.0.100:42000/getAllMeasurements"
 @app.route('/', methods=['GET'])
 def index():
     try:
-        r = requests.get(url = databaseMS_URL)
+        r = requests.get(url = databaseMS_URL + "/getAllMeasurements")
     except:
         logger.error("Could not get HTTP response from databaseMS.")
         return "Could not get HTTP response from databaseMS."
     else:
         logger.info("Successfully obtained HTTP response from databaseMS.")
+        return r.content
+
+@app.route('/years')
+def years():
+    try:
+        r = requests.get(url = databaseMS_URL + "/years")
+    except:
+        logger.error("Could not get HTTP response from databaseMS.")
+        return "Could not get HTTP response from databaseMS."
+    else:
+        logger.info("Successfully obtained HTTP response from databaseMS.")
+        return r.content
+
+@app.route('/yoki')
+def yoki():
+    try:
+        r = requests.get(url = databaseMS_URL + "/yoki")
+    except:
+        return "Yoki cannot work"
+    else:
         return r.content
 
 if __name__ == "__main__":

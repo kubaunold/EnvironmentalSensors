@@ -51,13 +51,11 @@ def sayHello(namy="Alen"):
 def page_not_found(e):
     return "<h1>404</h1><p>The resource could not be found.</p>", 404
 
-@app.route('/years')
-def years():
-    years = [2019, 2020]
-    try:
-        return render_template('years.html', years=years)
-    except:
-        return 'Could not load "years" page.'
+
+
+# @app.route('/howManyYears')
+# def howManyYears():
+
 
 @app.route('/backs')
 def show_all():
