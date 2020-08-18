@@ -97,6 +97,22 @@ def years():
         logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringYears)
 
+@app.route('/showMonthsFor/<int:year>')
+def showMonthsFor(year):
+    occuringMonths = []
+    return f"Showing months for year {year}"
+    # try:
+    #     for i in range(1, 12 + 1):
+    #         currentMonthblahblah blah hResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
+    #         if currentYearResponse != None:
+    #             occuringYears+=[i]
+    #     print(f"occuringYears: {occuringYears}")
+    # except:
+    #     return 'Could not load "years" page. Bzzz'
+    # else:
+    #     logger.info("Successfully obtained occuring years.")
+    #     return json.dumps(occuringYears)
+
 if __name__ == "__main__":
     checkDb(db)
     app.run(debug=True, host='127.0.0.100', port=42000)

@@ -4,6 +4,7 @@ import logging
 from time import sleep
 from sys import stdout  #for dynamic printing in console
 import json
+import urllib
 
 
 # create logger
@@ -47,6 +48,25 @@ def years():
         logger.info("Successfully obtained HTTP response from databaseMS about occuring years.")
         occuringYears = json.loads(r.content)
         return render_template("years.html", years = occuringYears)
+
+@app.route('/showMonthsFor/<int:year>')
+def showMonthsFor(year):
+    # return f"Showing months for year {year}"
+    try:
+        args = {"year": year}
+        url = databaseMS_URL + "?" + urllib.urlencode(args)
+        r = requests.get(url = url)
+    except:
+        error = "Could not get HTTP response from databaseMS about occuring months in a year."
+        logger.error(error)
+        return error
+    else:
+        info = "Successfully obtained HTTP response from databaseMS about occuring months in a year."
+        logger.info(info)
+        # occuringMonths = json.loads(r.content)
+        # return f"Got months for year {year}"
+        return r
+        # return render_template("years.html", years = occuringYears)
 
 @app.route('/showSomething')
 def showSomething():
