@@ -52,6 +52,14 @@ def yoki():
     else:
         return r.content
 
+@app.route('/login')
+@app.route('/login/<name>')
+def loginPage(name=None):
+    try:
+        return render_template('login.html', name=name)
+    except:
+        return 'Could not load login page.'
+
 if __name__ == "__main__":
     print("webApp: Waiting until the database is up...")
     sleep(5)

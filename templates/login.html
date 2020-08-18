@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>EnvSen - Login page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    
+    <!-- Icon and Page Title-->
+    <div class="fadeIn first" style="font-size: x-large;">
+      <strong>Environmental sensors</strong>
+      </br>
+      <a href="http://etd.net.pl/" target="_blank">
+        <img alt="etd-icon" id="icon" width="200" height="200" src="/static/images/etd_logo_200x200.jpg"/>
+      </a>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Password -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
