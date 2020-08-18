@@ -3,6 +3,8 @@ import requests
 import logging
 from time import sleep
 from sys import stdout  #for dynamic printing in console
+import json
+
 
 # create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -30,7 +32,9 @@ def index():
         return "Could not get HTTP response from databaseMS."
     else:
         logger.info("Successfully obtained HTTP response from databaseMS.")
-        return r.content
+        json_string = r.content
+        measurements = json.loads(json_string)
+        return render_template('index.html', measurements=measurements)
 
 @app.route('/years')
 def years():
@@ -40,8 +44,13 @@ def years():
         logger.error("Could not get HTTP response from databaseMS.")
         return "Could not get HTTP response from databaseMS."
     else:
-        logger.info("Successfully obtained HTTP response from databaseMS.")
-        return r.content
+        logger.info("Successfully obtained HTTP response from databaseMS about occuring years.")
+        occuringYears = json.loads(r.content)
+        return render_template("years.html", years = occuringYears)
+
+@app.route('/showSomething')
+def showSomething():
+    return "Something"
 
 @app.route('/yoki')
 def yoki():
@@ -54,7 +63,7 @@ def yoki():
 
 @app.route('/login')
 @app.route('/login/<name>')
-def loginPage(name=None):|
+def loginPage(name=None):
     try:
         return render_template('login.html', name=name)
     except:

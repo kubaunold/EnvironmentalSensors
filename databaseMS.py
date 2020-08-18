@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import logging
 import time
+import json
 
 #create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -20,16 +21,22 @@ def checkDb(db):
     db.create_all()
 
 class Measurement(db.Model):
-    #id as PK is automatically set has autoincrement=True
+    # id as PK is automatically set has autoincrement=True
     id =            db.Column(db.Integer, primary_key=True, nullable=False)
     temperature =   db.Column(db.Float, nullable=False, default=20)
     humidity =      db.Column(db.Float, nullable=False, default=20)
     timestamp =     db.Column(db.DateTime, default=datetime.utcnow)
 
+    # Needed for json compression
+    def dump(self):
+        return {'id': self.id,
+                'temperature': self.temperature,
+                'humidity': self.humidity,
+                'timestamp': self.timestamp}
+
+    # Returns printable representation of an object
     def __repr__(self):
         return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
-
-
 
 @app.route('/insertMeasurement', methods=['POST'])
 def result():
@@ -60,7 +67,6 @@ def result():
 @app.route('/getAllMeasurements', methods=['GET'])
 def getAllMeasurements():
     if request.method == 'GET':
-        # return "Zwracam pomiary..."
         try:
             measurements = Measurement.query.order_by(Measurement.timestamp).all()
             measurements = Measurement.query.all()
@@ -70,38 +76,30 @@ def getAllMeasurements():
             return "Database is temporarily in a lockdown mode."
         else:
             logger.info("Successfully sent HTTP message to webApp.")
-        return render_template('index.html', measurements=measurements)
+            json_string = json.dumps([o.dump() for o in measurements], indent=4, sort_keys=True, default=str)   #needed for date serialization
+            return json_string
 
 @app.route('/years')
 def years():
-    print(1233)
     occuringYears = []
-    minYear = Measurement.query.order_by(Measurement.timestamp.asc()).first().timestamp.year
-    maxYear = Measurement.query.order_by(Measurement.timestamp.desc()).first().timestamp.year
-    print(minYear, maxYear)
-    for i in range(minYear, maxYear + 1):
-        currentYearResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
-        if currentYearResponse != None:
-            occuringYears+=[i]
-    print(f"occuringYears: {occuringYears}")
     try:
-        return render_template("years.html", years = occuringYears)
+        minYear = Measurement.query.order_by(Measurement.timestamp.asc()).first().timestamp.year
+        maxYear = Measurement.query.order_by(Measurement.timestamp.desc()).first().timestamp.year
+        print(minYear, maxYear)
+        for i in range(minYear, maxYear + 1):
+            currentYearResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
+            if currentYearResponse != None:
+                occuringYears+=[i]
+        print(f"occuringYears: {occuringYears}")
     except:
         return 'Could not load "years" page. Bzzz'
-    # return 'Returning "years" page.'
-
-@app.route('/yoki')
-def yoki():
-    return render_template("years.html")
-
-@app.route('/backs')
-def show_all():
-   return render_template('index.html')
+    else:
+        logger.info("Successfully obtained occuring years.")
+        return json.dumps(occuringYears)
 
 if __name__ == "__main__":
     checkDb(db)
     app.run(debug=True, host='127.0.0.100', port=42000)
-
 
 """ HOW TO RESET DB?
 1) source /venv/bin/activate
