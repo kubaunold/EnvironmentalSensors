@@ -85,7 +85,7 @@ def years():
             occuringYears+=[i]
     print(f"occuringYears: {occuringYears}")
     try:
-        return render_template('years.html', years=occuringYears)
+        return render_template("years.html", years = occuringYears)
     except:
         return 'Could not load "years" page. Bzzz'
     # return 'Returning "years" page.'
@@ -93,6 +93,10 @@ def years():
 @app.route('/yoki')
 def yoki():
     return render_template("years.html")
+
+@app.route('/backs')
+def show_all():
+   return render_template('index.html')
 
 if __name__ == "__main__":
     checkDb(db)

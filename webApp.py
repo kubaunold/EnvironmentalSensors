@@ -54,7 +54,7 @@ def yoki():
 
 @app.route('/login')
 @app.route('/login/<name>')
-def loginPage(name=None):
+def loginPage(name=None):|
     try:
         return render_template('login.html', name=name)
     except:
