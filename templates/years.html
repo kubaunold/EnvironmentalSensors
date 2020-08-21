@@ -10,7 +10,7 @@
 
 
 {% for i in years %}
-  <a href="{{ url_for('showMonthsFor', year=i) }}">
+  <a href="{{ url_for('date', year=i, month=i-1500) }}">
     <button type="button" class="btn btn-outline-primary">
       {{i}}
       <br/>

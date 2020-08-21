@@ -49,13 +49,29 @@ def years():
         occuringYears = json.loads(r.content)
         return render_template("years.html", years = occuringYears)
 
-@app.route('/showMonthsFor/<int:year>')
-def showMonthsFor(year):
+@app.route('/date/<int:year>')
+@app.route('/date/<int:year>/<int:month>')
+@app.route('/date/<int:year>/<int:month>/<int:day>')
+def date(year=None, month=None, day=None):
     # return f"Showing months for year {year}"
     try:
-        args = {"year": year}
+        args = {"year": year, "month": month}
         url = databaseMS_URL + "?" + urllib.urlencode(args)
-        r = requests.get(url = url)
+        return url
+        # r = requests.get(url = url)
+
+        # if (year != None) and (month == day == None):
+        #     args = {"year": year}
+        #     url = databaseMS_URL + "?" + urllib.urlencode(args)
+        #     r = requests.get(url = url)
+        # elif year != None and month != None and day == None:
+        #     r = "Nie ma tylko dnia"
+        # elif year != None and month != None and day != None:
+        #     r = "Jest dzien, mc, rok"
+        # else:
+        #     r = "Żaden z typów daty nie podany w prawidłowej formie."
+
+
     except:
         error = "Could not get HTTP response from databaseMS about occuring months in a year."
         logger.error(error)
@@ -91,6 +107,6 @@ def loginPage(name=None):
 
 if __name__ == "__main__":
     print("webApp: Waiting until the database is up...")
-    sleep(5)
+    sleep(2)
     print("Setting up server at: {}".format("http://127.0.0.1:5000/"))
     app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119
