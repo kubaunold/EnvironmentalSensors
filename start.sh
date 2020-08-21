@@ -19,7 +19,7 @@ trap handler SIGINT
 #-t A	-	for displaing time w/ date
 #-l	    -	for logging; need to be run w/ sudo; prints output to a .log file
 #-x 	-	for extra info; RX-receiving; TX-transmitting
-python databaseMS.py & python webApp.py & candump can0 -t A | python3 /home/pi/EnvSen/translateFrames.py
+python databaseMS.py & python webApp.py & candump can0 -t A | python3 /home/pi/EnvironmentalSensors/translateFrames.py
 
 #screen
 
