@@ -4,7 +4,7 @@ import logging
 from time import sleep
 from sys import stdout  #for dynamic printing in console
 import json
-import urllib
+import urllib.parse
 
 
 # create logger
@@ -37,7 +37,7 @@ def index():
         measurements = json.loads(json_string)
         return render_template('index.html', measurements=measurements)
 
-@app.route('/years')
+@app.route('/date')
 def years():
     try:
         r = requests.get(url = databaseMS_URL + "/years")
@@ -55,8 +55,13 @@ def years():
 def date(year=None, month=None, day=None):
     # return f"Showing months for year {year}"
     try:
+        print("Im here!")
         args = {"year": year, "month": month}
-        url = databaseMS_URL + "?" + urllib.urlencode(args)
+        # print(f"My args are: year: {year}, month: {month}")
+        args_encoded = urllib.parse.urlencode(args)
+        print(f"args encoded: {args_encoded}")
+        url = databaseMS_URL + "?" + args_encoded
+        print(url)
         return url
         # r = requests.get(url = url)
 

@@ -70,7 +70,7 @@ def getAllMeasurements():
         try:
             measurements = Measurement.query.order_by(Measurement.timestamp).all()
             measurements = Measurement.query.all()
-            print("type(measurements[1]): {}".format(type(measurements[1])))
+            # print("type(measurements[1]): {}".format(type(measurements[1])))
         except:
             logger.error("Database is temporarily in a lockdown mode.")
             return "Database is temporarily in a lockdown mode."
@@ -85,12 +85,12 @@ def years():
     try:
         minYear = Measurement.query.order_by(Measurement.timestamp.asc()).first().timestamp.year
         maxYear = Measurement.query.order_by(Measurement.timestamp.desc()).first().timestamp.year
-        print(minYear, maxYear)
+        # print(minYear, maxYear)
         for i in range(minYear, maxYear + 1):
             currentYearResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
             if currentYearResponse != None:
                 occuringYears+=[i]
-        print(f"occuringYears: {occuringYears}")
+        # print(f"occuringYears: {occuringYears}")
     except:
         return 'Could not load "years" page. Bzzz'
     else:
