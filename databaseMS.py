@@ -6,9 +6,9 @@ import time
 import json
 
 #create logger
-LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
-logger = logging.getLogger()
+# LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+# logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+# logger = logging.getLogger()
 
 #configure server and db
 app = Flask(__name__)
@@ -38,6 +38,10 @@ class Measurement(db.Model):
     def __repr__(self):
         return '<Measurement: id=%r t=%f h=%f ts=%a>' % (self.id, self.temperature, self.humidity, self.timestamp)
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Hello, it's dbMS homepage."
+
 @app.route('/insertMeasurement', methods=['POST'])
 def result():
     if request.method == 'POST':
@@ -55,12 +59,12 @@ def result():
         try:
             db.session.add(mes)
             db.session.commit()
-            logger.info("Frame successfully commited to the db")
+            # logger.info("Frame successfully commited to the db")
         except:
-            logger.error("Measurement failed to be inserted to the db.")
+            # logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
         else:
-            logger.info("Measurement successfully inserted to the db.")
+            # logger.info("Measurement successfully inserted to the db.")
             return 'Measurement successfully inserted to the db.'
 
 @app.route('/getAllMeasurements', methods=['GET'])
@@ -71,10 +75,10 @@ def getAllMeasurements():
             measurements = Measurement.query.all()
             # print("type(measurements[1]): {}".format(type(measurements[1])))
         except:
-            logger.error("Database is temporarily in a lockdown mode.")
+            # logger.error("Database is temporarily in a lockdown mode.")
             return "Database is temporarily in a lockdown mode."
         else:
-            logger.info("Successfully sent HTTP message to webApp.")
+            # logger.info("Successfully sent HTTP message to webApp.")
             json_string = json.dumps([o.dump() for o in measurements], indent=4, sort_keys=True, default=str)   #needed for date serialization
             return json_string
 
@@ -93,29 +97,44 @@ def years():
     except:
         return 'Could not load "years" page. Bzzz'
     else:
-        logger.info("Successfully obtained occuring years.")
+        # logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringYears)
 
 @app.route('/showMonthsFor/<int:year>')
 def showMonthsFor(year=None):
+    print("in...")
     # return "Hi, Here are my months!"
     occuringMonths = []
-    try:
-        for month in range(1, 12 + 1):
-            curMonthInStringFormat = datetime.datetime(year, month, 1).strftime("%Y-%m")    #day's required but here unnecessary
-            curMonthResponse = Measurement.query.filter(Measurement.timestamp.startswith(curMonthInStringFormat + "%")).first()
-            if currentYearResponse != None:
-                occuringYears+=[i]
-        print(f"occuringYears: {occuringYears}")
-    except:
-        return 'Could not load "years" page. Bzzz'
-    else:
-        logger.info("Successfully obtained occuring years.")
-        return json.dumps(occuringYears)
+    print("box")
+    for month in range(1, 12 + 1):
+        print("fox")
+            # print(datetime.datetime(int(year), month, 1).strftime("%Y-%m"))
+        print(f"year: {year}")
+        print(f"month: {month}")
+        curMonthInStringFormat = datetime(int(year), month, 1).strftime("%Y-%m")    #day's required but here unnecessary
+        print("beaver")
+            
+        print(f"curMonthInStringFormat: {curMonthInStringFormat}")
+        curMonthResponse = Measurement.query.filter(Measurement.timestamp.startswith(curMonthInStringFormat + "%")).first()
+        print(f"curMonthResponse: {curMonthResponse}")
+        if curMonthResponse != None:
+            occuringMonths+=[month]
+        print(f"occuringMonths: {occuringMonths}")
+    return "Done!!!"
+    # try:
+        # return "God of War"
+
+    # except:
+    #     return 'Could not load "years" page. Bzzz'
+    # else:
+    #     # logger.info("Successfully obtained occuring years.")
+    #     return json.dumps(occuringYears)
 
 if __name__ == "__main__":
     checkDb(db)
-    app.run(debug=True, host='127.0.0.1', port=6000)
+    # app.run(debug=True, host='127.0.0.1', port=6000)
+    print("Setting up server at: {}".format("http://0.0.0.0:5001/"))
+    app.run(debug=True, host='0.0.0.0', port=5001)    #it'll make my server externally visible
 
 """ HOW TO RESET DB?
 1) source /venv/bin/activate

@@ -13,7 +13,7 @@ logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=L
 logger = logging.getLogger()
 
 app = Flask(__name__)
-databaseMS_URL = "http://127.0.0.1:6000"
+databaseMS_URL = "http://0.0.0.0:5001/"
 
 """Prints countdown"""
 # def countDown(n):
@@ -65,23 +65,13 @@ def date(year=None, month=None, day=None):
 
         #Showing available months in a year
         if year!=None and month==None and day==None:
-            print(1)
-
             #Try to get a response from dbMS
             try:
-                # print(f"databaseMS_URL={databaseMS_URL}")
-                # print(f"type(databaseMS_URL)={type(databaseMS_URL)}")
-                # a = "/showMonthsFor/"
-                # print("/showMonthsFor/={a}")
-                # print(f"type(databaseMS_URL)={type(a)}")
-                # print(f"year={year}")
-                # print(f"type(year)={type(year)}")
-                # print('\n')
-
-                
-                newUrl = databaseMS_URL + "/showMonthsFor/" + str(year)
+                newUrl = databaseMS_URL + "showMonthsFor/" + str(year)
+                print(f"year: {year}")
                 print(f"(1)Making request at r={newUrl}")
-                r = requests.get(url = databaseMS_URL + "/showMonthsFor/" + year)
+                r = requests.get(url = databaseMS_URL + "showMonthsFor/" + year)
+                print("eehere")
                 r_display = r.content
                 print(f"(2)Making request at r={r_display}")
             except:
@@ -138,19 +128,6 @@ def date(year=None, month=None, day=None):
         return r
         # return render_template("years.html", years = occuringYears)
 
-@app.route('/showSomething')
-def showSomething():
-    return "Something"
-
-@app.route('/yoki')
-def yoki():
-    try:
-        r = requests.get(url = databaseMS_URL + "/yoki")
-    except:
-        return "Yoki cannot work"
-    else:
-        return r.content
-
 @app.route('/login')
 @app.route('/login/<name>')
 def loginPage(name=None):
@@ -161,8 +138,8 @@ def loginPage(name=None):
 
 if __name__ == "__main__":
     ascii_banner = pyfiglet.figlet_format("Welcome to EnvSens!")
-    print(ascii_banner)
     # print("webApp: Waiting until the database is up...")
     # sleep(2)
-    print("Setting up server at: {}".format("http://127.0.0.1:5000/"))
+    print("Setting up server at: {}".format("http://0.0.0.0:5000/"))
+    print(ascii_banner)
     app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119
