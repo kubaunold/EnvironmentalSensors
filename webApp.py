@@ -13,7 +13,7 @@ logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=L
 logger = logging.getLogger()
 
 app = Flask(__name__)
-databaseMS_URL = "http://127.0.0.100:42000"
+databaseMS_URL = "http://127.0.0.1:6000"
 
 """Prints countdown"""
 # def countDown(n):
@@ -28,6 +28,8 @@ databaseMS_URL = "http://127.0.0.100:42000"
 def index():
     try:
         r = requests.get(url = databaseMS_URL + "/getAllMeasurements")
+        r_url = databaseMS_URL + "/getAllMeasurements"
+        print(f"(0)Making request at r={r_url}")
     except:
         logger.error("Could not get HTTP response from databaseMS.")
         return "Could not get HTTP response from databaseMS."
@@ -41,6 +43,8 @@ def index():
 def years():
     try:
         r = requests.get(url = databaseMS_URL + "/years")
+        r_url = databaseMS_URL + "/years"
+        print(f"date_url={r_url}")
     except:
         logger.error("Could not get HTTP response from databaseMS.")
         return "Could not get HTTP response from databaseMS."
@@ -57,7 +61,52 @@ def date(year=None, month=None, day=None):
     try:
         print("Im here!")
         args = {"year": year, "month": month}
-        # print(f"My args are: year: {year}, month: {month}")
+        print(f"My args are: year: {year}, month: {month} \n")
+
+        #Showing available months in a year
+        if year!=None and month==None and day==None:
+            print(1)
+
+            #Try to get a response from dbMS
+            try:
+                # print(f"databaseMS_URL={databaseMS_URL}")
+                # print(f"type(databaseMS_URL)={type(databaseMS_URL)}")
+                # a = "/showMonthsFor/"
+                # print("/showMonthsFor/={a}")
+                # print(f"type(databaseMS_URL)={type(a)}")
+                # print(f"year={year}")
+                # print(f"type(year)={type(year)}")
+                # print('\n')
+
+                
+                newUrl = databaseMS_URL + "/showMonthsFor/" + str(year)
+                print(f"(1)Making request at r={newUrl}")
+                r = requests.get(url = databaseMS_URL + "/showMonthsFor/" + year)
+                r_display = r.content
+                print(f"(2)Making request at r={r_display}")
+            except:
+                msg = "Could not get HTTP response from databaseMS about occuring months in a yearasikdg."
+                logger.error(msg)
+                return msg
+            else:
+                return r
+                # msg = "Successfully obtained HTTP response from databaseMS about occuring months in a year."
+                # logger.info(msg)
+                # occuringMonths = json.loads(r.content)
+                # print(f"My response from dbMS: {occuringMonths}\n")
+                # return ("Hello")
+                # # return render_template("years.html", years = occuringYears)
+
+
+        #Showing available days in a month
+        elif year!=None and month!=None and day==None:
+            print(2)
+        #Showing measurements from specific day
+        elif year!=None and month!=None and day!=None:
+            print(3)
+        else:
+            print(4)
+
         args_encoded = urllib.parse.urlencode(args)
         print(f"args encoded: {args_encoded}")
         url = databaseMS_URL + "?" + args_encoded
