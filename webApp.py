@@ -5,7 +5,7 @@ from time import sleep
 from sys import stdout  #for dynamic printing in console
 import json
 import urllib.parse
-
+import pyfiglet #for banners
 
 # create logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
@@ -160,6 +160,8 @@ def loginPage(name=None):
         return 'Could not load login page.'
 
 if __name__ == "__main__":
+    ascii_banner = pyfiglet.figlet_format("Hello!!")
+    print(ascii_banner)
     print("webApp: Waiting until the database is up...")
     sleep(2)
     print("Setting up server at: {}".format("http://127.0.0.1:5000/"))
