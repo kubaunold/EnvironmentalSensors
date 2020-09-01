@@ -102,33 +102,27 @@ def years():
 
 @app.route('/showMonthsFor/<int:year>')
 def showMonthsFor(year=None):
-    print("in...")
-    # return "Hi, Here are my months!"
     occuringMonths = []
     print("box")
-    for month in range(1, 12 + 1):
-        print("fox")
-            # print(datetime.datetime(int(year), month, 1).strftime("%Y-%m"))
-        print(f"year: {year}")
-        print(f"month: {month}")
-        curMonthInStringFormat = datetime(int(year), month, 1).strftime("%Y-%m")    #day's required but here unnecessary
-        print("beaver")
-            
-        print(f"curMonthInStringFormat: {curMonthInStringFormat}")
-        curMonthResponse = Measurement.query.filter(Measurement.timestamp.startswith(curMonthInStringFormat + "%")).first()
-        print(f"curMonthResponse: {curMonthResponse}")
-        if curMonthResponse != None:
-            occuringMonths+=[month]
+    try:
+        for month in range(1, 12 + 1):
+            print("fox")
+            print(f"year: {year}")
+            print(f"month: {month}")
+            curMonthInStringFormat = datetime(int(year), month, 1).strftime("%Y-%m")    #day's required but here unnecessary
+            print("beaver")
+                
+            print(f"curMonthInStringFormat: {curMonthInStringFormat}")
+            curMonthResponse = Measurement.query.filter(Measurement.timestamp.startswith(curMonthInStringFormat + "%")).first()
+            print(f"curMonthResponse: {curMonthResponse}")
+            if curMonthResponse != None:
+                occuringMonths+=[month]
         print(f"occuringMonths: {occuringMonths}")
-    return "Done!!!"
-    # try:
-        # return "God of War"
-
-    # except:
-    #     return 'Could not load "years" page. Bzzz'
-    # else:
-    #     # logger.info("Successfully obtained occuring years.")
-    #     return json.dumps(occuringYears)
+    except:
+        return 'Could not load "years" page. Bzzz'
+    else:
+        # logger.info("Successfully obtained occuring years.")
+        return json.dumps(occuringMonths)
 
 if __name__ == "__main__":
     checkDb(db)

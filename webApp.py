@@ -13,7 +13,7 @@ logging.basicConfig(filename = "log/webApp.log", level = logging.DEBUG, format=L
 logger = logging.getLogger()
 
 app = Flask(__name__)
-databaseMS_URL = "http://0.0.0.0:5001/"
+databaseMS_URL = "http://0.0.0.0:5001"
 
 """Prints countdown"""
 # def countDown(n):
@@ -67,25 +67,22 @@ def date(year=None, month=None, day=None):
         if year!=None and month==None and day==None:
             #Try to get a response from dbMS
             try:
-                newUrl = databaseMS_URL + "showMonthsFor/" + str(year)
+                newUrl = databaseMS_URL + "/showMonthsFor" + "/" + str(year)
                 print(f"year: {year}")
                 print(f"(1)Making request at r={newUrl}")
-                r = requests.get(url = databaseMS_URL + "showMonthsFor/" + year)
-                print("eehere")
-                r_display = r.content
-                print(f"(2)Making request at r={r_display}")
+                r = requests.get(url = databaseMS_URL + "/showMonthsFor" + "/" + str(year))
+                print(f"r: {r}")
             except:
                 msg = "Could not get HTTP response from databaseMS about occuring months in a yearasikdg."
                 logger.error(msg)
                 return msg
             else:
-                return r
-                # msg = "Successfully obtained HTTP response from databaseMS about occuring months in a year."
-                # logger.info(msg)
-                # occuringMonths = json.loads(r.content)
-                # print(f"My response from dbMS: {occuringMonths}\n")
-                # return ("Hello")
-                # # return render_template("years.html", years = occuringYears)
+                # return r_display
+                msg = "Successfully obtained HTTP response from databaseMS about occuring months in a year."
+                logger.info(msg)
+                occuringMonths = json.loads(r.content)
+                print(f"My response from dbMS: {occuringMonths}\n")
+                return render_template("months.html", year = year, months = occuringMonths)
 
 
         #Showing available days in a month
