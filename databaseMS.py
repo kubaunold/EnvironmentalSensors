@@ -5,10 +5,10 @@ import logging
 import time
 import json
 
-# #create logger
-# LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-# logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
-# logger = logging.getLogger()
+#create logger
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+logger = logging.getLogger()
 
 #configure server and db
 app = Flask(__name__)
@@ -55,13 +55,12 @@ def result():
         try:
             db.session.add(mes)
             db.session.commit()
-            # logger.info("Frame successfully commited to the db")
-            # return 'Stomething.'
+            logger.info("Frame successfully commited to the db")
         except:
-            # logger.error("Measurement failed to be inserted to the db.")
+            logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
         else:
-            # logger.info("Measurement successfully inserted to the db.")
+            logger.info("Measurement successfully inserted to the db.")
             return 'Measurement successfully inserted to the db.'
 
 @app.route('/getAllMeasurements', methods=['GET'])
@@ -72,10 +71,10 @@ def getAllMeasurements():
             measurements = Measurement.query.all()
             # print("type(measurements[1]): {}".format(type(measurements[1])))
         except:
-            # logger.error("Database is temporarily in a lockdown mode.")
+            logger.error("Database is temporarily in a lockdown mode.")
             return "Database is temporarily in a lockdown mode."
         else:
-            # logger.info("Successfully sent HTTP message to webApp.")
+            logger.info("Successfully sent HTTP message to webApp.")
             json_string = json.dumps([o.dump() for o in measurements], indent=4, sort_keys=True, default=str)   #needed for date serialization
             return json_string
 
@@ -94,26 +93,25 @@ def years():
     except:
         return 'Could not load "years" page. Bzzz'
     else:
-        # logger.info("Successfully obtained occuring years.")
+        logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringYears)
 
 @app.route('/showMonthsFor/<int:year>')
 def showMonthsFor(year=None):
-    return "Hi, Here are my months!"
-    # occuringMonths = []
-    # return f"Showing months for year {year}"
-    
-    # try:
-    #     for i in range(1, 12 + 1):
-    #         currentMonthblahblah blah hResponse = Measurement.query.filter(Measurement.timestamp.startswith(str(i))).first()
-    #         if currentYearResponse != None:
-    #             occuringYears+=[i]
-    #     print(f"occuringYears: {occuringYears}")
-    # except:
-    #     return 'Could not load "years" page. Bzzz'
-    # else:
-    #     logger.info("Successfully obtained occuring years.")
-    #     return json.dumps(occuringYears)
+    # return "Hi, Here are my months!"
+    occuringMonths = []
+    try:
+        for month in range(1, 12 + 1):
+            curMonthInStringFormat = datetime.datetime(year, month, 1).strftime("%Y-%m")    #day's required but here unnecessary
+            curMonthResponse = Measurement.query.filter(Measurement.timestamp.startswith(curMonthInStringFormat + "%")).first()
+            if currentYearResponse != None:
+                occuringYears+=[i]
+        print(f"occuringYears: {occuringYears}")
+    except:
+        return 'Could not load "years" page. Bzzz'
+    else:
+        logger.info("Successfully obtained occuring years.")
+        return json.dumps(occuringYears)
 
 if __name__ == "__main__":
     checkDb(db)
@@ -145,4 +143,7 @@ Measurement.query.filter_by(id=5862).all()
 Measurement.query.filter_by(id=5862).first()
 Measurement.query.filter_by(id=586215).first_or_404(description='There is no data with {}'.format(15))
 Measurement.query.order_by(Measurement.timestamp.desc()).first()
+
+dt = Measurement.query.filter(Measurement.timestamp.like("2020-07-29 13:43%")).first()
+print(dt.timestamp)
 """

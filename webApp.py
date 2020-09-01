@@ -160,9 +160,9 @@ def loginPage(name=None):
         return 'Could not load login page.'
 
 if __name__ == "__main__":
-    ascii_banner = pyfiglet.figlet_format("Hello!!")
+    ascii_banner = pyfiglet.figlet_format("Welcome to EnvSens!")
     print(ascii_banner)
-    print("webApp: Waiting until the database is up...")
-    sleep(2)
+    # print("webApp: Waiting until the database is up...")
+    # sleep(2)
     print("Setting up server at: {}".format("http://127.0.0.1:5000/"))
     app.run(debug=True, host='0.0.0.0', port=5000)  #ascii(w)=119
