@@ -5,7 +5,7 @@ import logging
 import time
 import json
 
-create logger
+# Set up logger logger
 LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
 logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
 logger = logging.getLogger()

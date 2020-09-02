@@ -88,13 +88,11 @@ def date(year=None, month=None, day=None):
 
     # Showing available days in a month
     elif year != None and month != None and day == None:
-        print("Looking for days!!!!!!!!")
         try:
             url = databaseMS_URL + "/showDaysFor" + \
                 "/" + str(year) + "/" + str(month)
             print(f"url: {url}")
-            r = requests.get(url=url)
-            print(f"r: {r}")
+            r = requests.get(url=url)            
         except:
             msg = "Could not get HTTP response from databaseMS about occuring days in a month."
             logger.error(msg)
@@ -110,25 +108,16 @@ def date(year=None, month=None, day=None):
     # Showing measurements from specific day
     elif year != None and month != None and day != None:
         print(3)
+
     else:
         print(4)
     args_encoded = urllib.parse.urlencode(args)
     print(f"args encoded: {args_encoded}")
     url = databaseMS_URL + "?" + args_encoded
     print(url)
+    
+    
     return url
-    # r = requests.get(url = url)
-
-    # if (year != None) and (month == day == None):
-    #     args = {"year": year}
-    #     url = databaseMS_URL + "?" + urllib.urlencode(args)
-    #     r = requests.get(url = url)
-    # elif year != None and month != None and day == None:
-    #     r = "Nie ma tylko dnia"
-    # elif year != None and month != None and day != None:
-    #     r = "Jest dzien, mc, rok"
-    # else:
-    #     r = "Żaden z typów daty nie podany w prawidłowej formie."
 
 
 @app.route('/login')
@@ -140,10 +129,13 @@ def loginPage(name=None):
         return 'Could not load login page.'
 
 
-if __name__ == "__main__":
+def main():
     ascii_banner = pyfiglet.figlet_format("Welcome to EnvSens!")
     # print("webApp: Waiting until the database is up...")
     # sleep(2)
     print("Setting up server at: {}".format("http://0.0.0.0:5000/"))
     print(ascii_banner)
     app.run(debug=True, host='0.0.0.0', port=5000)  # ascii(w)=119
+
+if __name__ == "__main__":
+    main()
