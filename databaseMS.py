@@ -5,10 +5,10 @@ import logging
 import time
 import json
 
-#create logger
-# LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
-# logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
-# logger = logging.getLogger()
+create logger
+LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
+logging.basicConfig(filename = "log/databaseMS.log", level = logging.DEBUG, format=LOG_FORMAT, filemode = 'w')
+logger = logging.getLogger()
 
 #configure server and db
 app = Flask(__name__)
@@ -59,12 +59,12 @@ def result():
         try:
             db.session.add(mes)
             db.session.commit()
-            # logger.info("Frame successfully commited to the db")
+            logger.info("Frame successfully commited to the db")
         except:
-            # logger.error("Measurement failed to be inserted to the db.")
+            logger.error("Measurement failed to be inserted to the db.")
             return 'There was an issue adding a measurment.'
         else:
-            # logger.info("Measurement successfully inserted to the db.")
+            logger.info("Measurement successfully inserted to the db.")
             return 'Measurement successfully inserted to the db.'
 
 @app.route('/getAllMeasurements', methods=['GET'])
@@ -75,10 +75,10 @@ def getAllMeasurements():
             measurements = Measurement.query.all()
             # print("type(measurements[1]): {}".format(type(measurements[1])))
         except:
-            # logger.error("Database is temporarily in a lockdown mode.")
+            logger.error("Database is temporarily in a lockdown mode.")
             return "Database is temporarily in a lockdown mode."
         else:
-            # logger.info("Successfully sent HTTP message to webApp.")
+            logger.info("Successfully sent HTTP message to webApp.")
             json_string = json.dumps([o.dump() for o in measurements], indent=4, sort_keys=True, default=str)   #needed for date serialization
             return json_string
 
@@ -97,7 +97,7 @@ def years():
     except:
         return 'Could not load "years" page. Bzzz'
     else:
-        # logger.info("Successfully obtained occuring years.")
+        logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringYears)
 
 @app.route('/showMonthsFor/<int:year>')
@@ -121,7 +121,7 @@ def showMonthsFor(year=None):
     except:
         return 'Could not load "years" page. Bzzz'
     else:
-        # logger.info("Successfully obtained occuring years.")
+        logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringMonths)
 
 
@@ -131,11 +131,8 @@ def showDaysFor(year=None, month=None):
     print("box2")
     try:
         for day in range(1, 31+1):
-            print("fox2")
             print(f"year: {year}, month: {month}, day: {day}")
             curDayInStringFormat = datetime(int(year), int(month), int(day)).strftime("%Y-%m-%d")
-            print("beaver2")
-            
             print(f"curDayInStringFormat: {curDayInStringFormat}")
             curDayResponse = Measurement.query.filter(Measurement.timestamp.startswith(curDayInStringFormat + "%")).first()
             print(f"curDayResponse: {curDayResponse}")
@@ -145,7 +142,7 @@ def showDaysFor(year=None, month=None):
     except:
         return 'Problem w/ filtering out days for a specific month.'
     else:
-        # logger.info("Successfully obtained occuring years.")
+        logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringDays)
 
 
