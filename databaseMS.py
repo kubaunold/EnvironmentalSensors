@@ -145,6 +145,21 @@ def showDaysFor(year=None, month=None):
         logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringDays)
 
+@app.route('/showMeasurementsFor/<int:year>/<int:month>/<int:day>')
+def showMeasurementsFor(year=None, month=None, day=None):
+    try:
+        curDayInStringFormat = datetime(int(year), int(month), int(day)).strftime("%Y-%m-%d")
+        curMeasurementsResponse = Measurement.query.filter(Measurement.timestamp.startswith(curDayInStringFormat + "%")).all()
+    except:
+        msg = 'Problem w/ filtering out measurements for a specific day.'
+        logger.error(msg)
+        return msg
+    else:
+        info = "Successfully obtained occuring measurements in a day."
+        logger.info(info)
+        json_string = json.dumps([o.dump() for o in curMeasurementsResponse], indent=4, sort_keys=True, default=str)   #needed for date serialization
+        return json_string
+
 
 if __name__ == "__main__":
     checkDb(db)
@@ -182,3 +197,10 @@ Measurement.query.order_by(Measurement.timestamp.desc()).first()
 dt = Measurement.query.filter(Measurement.timestamp.like("2020-07-29 13:43%")).first()
 print(dt.timestamp)
 """
+"""Prints countdown"""
+# def countDown(n):
+#     for i in range(n,0,-1):s
+#         stdout.write("\r%d... " % i)
+#         stdout.flush()
+#         sleep(1)
+#     stdout.write("\n") # move the cursor to the next line
