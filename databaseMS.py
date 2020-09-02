@@ -124,6 +124,31 @@ def showMonthsFor(year=None):
         # logger.info("Successfully obtained occuring years.")
         return json.dumps(occuringMonths)
 
+
+@app.route('/showDaysFor/<int:year>/<int:month>')
+def showDaysFor(year=None, month=None):
+    occuringDays = []
+    print("box2")
+    try:
+        for day in range(1, 31+1):
+            print("fox2")
+            print(f"year: {year}, month: {month}, day: {day}")
+            curDayInStringFormat = datetime(int(year), int(month), int(day)).strftime("%Y-%m-%d")
+            print("beaver2")
+            
+            print(f"curDayInStringFormat: {curDayInStringFormat}")
+            curDayResponse = Measurement.query.filter(Measurement.timestamp.startswith(curDayInStringFormat + "%")).first()
+            print(f"curDayResponse: {curDayResponse}")
+            if curDayResponse != None:
+                occuringDays+=[day]
+        print(f"occuringDays: {occuringDays}")
+    except:
+        return 'Problem w/ filtering out days for a specific month.'
+    else:
+        # logger.info("Successfully obtained occuring years.")
+        return json.dumps(occuringDays)
+
+
 if __name__ == "__main__":
     checkDb(db)
     # app.run(debug=True, host='127.0.0.1', port=6000)

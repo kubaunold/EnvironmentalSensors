@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>EnvSen - Days page</title>
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}"> -->
+{% endblock %}
+
+{% block body %}
+
+<h3>Showing available days for the month {{ month }} of the year {{ year }}</h3>
+
+
+{% for i in days %}
+  <a href="{{ url_for('date', year=year, month=month, day=i) }}">
+    <button type="button" class="btn btn-outline-primary">
+      {{i}}
+      <br/>
+    </button>
+  </a>
+{% endfor %}
+
+
+
+{% endblock %}
