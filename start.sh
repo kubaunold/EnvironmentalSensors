@@ -1,9 +1,12 @@
 #! /bin/bash
 
-#set up can
+# activate virtual environment
+source ~/EnvironmentalSensors/venv/bin/activate 
+
+# set up can
 sudo ip link set can0 up type can bitrate 460800
 
-#capture SIGINT
+# capture SIGINT
 handler()
 {
     pkill -f webApp.py
@@ -13,7 +16,7 @@ handler()
 }
 trap handler SIGINT
 
-#clear previous logs
+# clear previous logs
 #rm -rf log/*.log
 
 #-t A	-	for displaing time w/ date

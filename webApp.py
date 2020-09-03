@@ -140,7 +140,7 @@ def main():
     ascii_banner = pyfiglet.figlet_format("Welcome to EnvSens!")
     # print("webApp: Waiting until the database is up...")
     # sleep(2)
-    print("Setting up server at: {}".format("http://0.0.0.0:5000/"))
+    print("Setting up server webServer at: {}".format("http://0.0.0.0:5000/"))
     print(ascii_banner)
     app.run(debug=True, host='0.0.0.0', port=5000)  # ascii(w)=119
 

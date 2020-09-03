@@ -164,7 +164,7 @@ def showMeasurementsFor(year=None, month=None, day=None):
 if __name__ == "__main__":
     checkDb(db)
     # app.run(debug=True, host='127.0.0.1', port=6000)
-    print("Setting up server at: {}".format("http://0.0.0.0:5001/"))
+    print("Setting up databaseMC server at: {}".format("http://0.0.0.0:5001/"))
     app.run(debug=True, host='0.0.0.0', port=5001)    #it'll make my server externally visible
 
 """ HOW TO RESET DB?
