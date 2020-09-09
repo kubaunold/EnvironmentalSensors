@@ -1,4 +1,14 @@
+"""
+[TODO]
+- 
+
+
+[DONE]
+"""
+
 from flask import Flask, render_template, url_for, request, redirect
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 import requests
 import logging
 from time import sleep
@@ -12,11 +22,29 @@ LOG_FORMAT = "%(levelname)s %(asctime)s - %(message)s"
 logging.basicConfig(filename="log/webApp.log", level=logging.DEBUG, format=LOG_FORMAT, filemode='w')
 logger = logging.getLogger()
 
+# app config
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + "login" + ".db"
+app.config['SECRET_KEY'] = "thisissecret"
+
+# db and login config
+db = SQLAlchemy(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+
 databaseMS_URL = "http://0.0.0.0:5001"
 
+class User(UserMixin, db.Model):
+    id       = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True)
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+ 
 @app.route('/', methods=['GET'])
+@login_required
 def index():
     """ This function is triggered when we open the homepage
     """
@@ -35,6 +63,7 @@ def index():
 
 
 @app.route('/date')
+@login_required
 def years():
     try:
         r = requests.get(url=databaseMS_URL + "/years")
@@ -53,6 +82,7 @@ def years():
 @app.route('/date/<int:year>')
 @app.route('/date/<int:year>/<int:month>')
 @app.route('/date/<int:year>/<int:month>/<int:day>')
+@login_required
 def date(year=None, month=None, day=None):
     args = {"year": year, "month": month, "day": day}
     print(f"My args are: year: {year}, month: {month}, day: {day} \n")
@@ -130,11 +160,19 @@ def date(year=None, month=None, day=None):
 @app.route('/login')
 @app.route('/login/<name>')
 def loginPage(name=None):
-    try:
-        return render_template('login.html', name=name)
-    except:
-        return 'Could not load login page.'
+    # try:
+    #     return render_template('login.html', name=name)
+    # except:
+    #     return 'Could not load login page.'
+    user = User.query.filter_by(username='Kuba').first()
+    login_user(user)
+    return "Kuba, you are now logged in!"
 
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return "You are now logged out!"
 
 def main():
     ascii_banner = pyfiglet.figlet_format("Welcome to EnvSens!")
@@ -147,3 +185,28 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+""" CREATE NEW TABLE
+python
+>>> from webApp import db
+>>> db.create_all()
+>>> exit()
+"""
+""" SEE THE CREATION
+sqlite3 login.db
+>>> .tables
+>>> .exit
+"""
+""" ADD NEW USER
+python
+>>> from webApp import db, User
+>>> kuba = User(username="Kuba")
+>>> db.session.add(kuba)
+>>> db.session.commit()
+
+>>> results = User.query.all()
+>>> results[0].username
+>>> exit()
+"""
