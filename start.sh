@@ -1,5 +1,19 @@
 #! /bin/bash
 
+# create log/ directory if not yet created
+DIR="./log/"
+if [ -d "$DIR" ]; then
+  ### Take action if $DIR exists ###
+  echo "Log directory ${DIR} exists. Proceedeing..."
+  echo ""
+else
+  ###  Control will jump here if $DIR does NOT exists ###
+  echo "Could not find ${DIR} directory. Creating one in order to continue."
+  mkdir ./log/
+  echo "Driectory ${DIR} created successfully."
+#   exit 1
+fi
+
 # activate virtual environment
 source ~/EnvironmentalSensors/venv/bin/activate 
 
