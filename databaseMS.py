@@ -65,7 +65,7 @@ def result():
             return 'There was an issue adding a measurment.'
         else:
             logger.info("Measurement successfully inserted to the db.")
-            return 'Measurement successfully inserted to the db.'
+            return 'Measurement succeyearsssfully inserted to the db.'
 
 @app.route('/getAllMeasurements', methods=['GET'])
 def getAllMeasurements():

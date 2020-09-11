@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# activate virtual environment
+source ~/EnvironmentalSensors/venv/bin/activate 
+
 # create log/ directory if not yet created
 DIR="./log/"
 if [ -d "$DIR" ]; then
@@ -13,9 +16,6 @@ else
   echo "Driectory ${DIR} created successfully."
 #   exit 1
 fi
-
-# activate virtual environment
-source ~/EnvironmentalSensors/venv/bin/activate 
 
 # set up can
 sudo ip link set can0 up type can bitrate 460800
@@ -36,7 +36,7 @@ trap handler SIGINT
 #-t A	-	for displaing time w/ date
 #-l	    -	for logging; need to be run w/ sudo; prints output to a .log file
 #-x 	-	for extra info; RX-receiving; TX-transmitting
-python databaseMS.py & python webApp.py & candump can0 -t A | python3 /home/pi/EnvironmentalSensors/translateFrames.py
+python databaseMS.py & python webApp.py & candump can0 -t A | python3 translateFrames.py
 
 #screen
 

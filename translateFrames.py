@@ -14,13 +14,15 @@ logging.basicConfig(filename = "log/translateFrames.log", level = logging.DEBUG,
 logger = logging.getLogger()
 
 
+databaseMS_URL = "http://0.0.0.0:5001"
+
 # "constatnt" variables used for printing result 
 CELS = str("\u00b0C")  #sign for Celsius degrees
 PERC = str("%")        #sign for humidity
 
 def obtainMeasurement():
     dataS = sys.stdin.readline()
-    print(dataS)
+    # print(dataS)
     
     #split frame to list
     dataL = dataS.split()
@@ -87,34 +89,36 @@ def obtainMeasurement():
 #     stdout.write("\n") # move the cursor to the next line
 
 
-
 if __name__ == "__main__":
     print("translateFrames: Waiting until the database is up...")
     sleep(5)
 
-    databaseMS = "http://127.0.0.100:42000/insertMeasurement"
     while(1):
         measurementDict = obtainMeasurement()
+        # print(json.dumps(measurementDict))
+        print("put into db")
         # measurementJson = json.dumps(measurementDict)
-
-        
-        # send packet
-        #it has to be python-dict as a payload!
-        # r = requests.post(databaseMS, data=measurementDict)
         try:
-            r = requests.post(databaseMS, data=measurementDict)
-            logger.info("Frame successfully sent to dataBaseMS")
+            # send packet
+            # it has to be python-dict as a payload!
+            r = requests.post(url=databaseMS_URL + "/insertMeasurement", data=measurementDict)
         except ConnectionRefusedError as err:
-            logger.error("ConnectionRefusedError; Reestablishing...")
-            print("Trying to restablish connection in ")
+            error = "ConnectionRefusedError; Reestablishing in 3 seconds..."
+            logger.error(error)
+            print(error)
             sleep(3)
             # countDown(3)
         except:
-            logger.error("Other error occured; Reestablishing...")
+            error = "Other error occured; Reestablishing..."
+            logger.error(error)
             print("Unable to post request to databaseMS.py.")
-            print("Trying to restablish connection. Wait till timeout is completed...")
+            print("Trying to reestablish connection. Wait till timeout is completed...")
             for i in range(101):
                 sleep(.03)
                 sys.stdout.write("\r%d%%" % i)
                 sys.stdout.flush()
-            stdout.write("\n") # move the cursor to the next lin
+            stdout.write("\n") # move the cursor to the next line
+        else:
+            info = "Frame successfully sent to dataBaseMS"
+            logger.info(info)
+
