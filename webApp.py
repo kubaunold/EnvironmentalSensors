@@ -142,7 +142,7 @@ def main():
     # sleep(2)
     print("Setting up server webServer at: {}".format("http://0.0.0.0:5000/"))
     print(ascii_banner)
-    app.run(debug=True, host='0.0.0.0', port=5000)  # ascii(w)=119
+    app.run(debug=False, host='0.0.0.0', port=5000)  # ascii(w)=119
 
 
 if __name__ == "__main__":
