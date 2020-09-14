@@ -31,3 +31,6 @@ sudo apt-get install libatlas-base-dev
 
 ### running app
 ./start.sh
+
+
+sigoihy
